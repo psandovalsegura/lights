@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		811B68961DA89ACE00903A02 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 811B68951DA89ACE00903A02 /* AppDelegate.swift */; };
-		811B68981DA89ACE00903A02 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 811B68971DA89ACE00903A02 /* ViewController.swift */; };
 		811B689B1DA89ACE00903A02 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 811B68991DA89ACE00903A02 /* Main.storyboard */; };
 		811B689E1DA89ACE00903A02 /* Lights.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 811B689C1DA89ACE00903A02 /* Lights.xcdatamodeld */; };
 		811B68A01DA89ACE00903A02 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 811B689F1DA89ACE00903A02 /* Assets.xcassets */; };
@@ -19,12 +18,12 @@
 		811B68B31DA8A20400903A02 /* SanFranciscoText-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 811B68AD1DA8A15200903A02 /* SanFranciscoText-Medium.otf */; };
 		811B68B41DA8A20400903A02 /* SanFranciscoText-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 811B68AE1DA8A15200903A02 /* SanFranciscoText-Regular.otf */; };
 		811B68B51DA8A20400903A02 /* SanFranciscoText-Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 811B68AF1DA8A15200903A02 /* SanFranciscoText-Semibold.otf */; };
+		81F8EAEF1DB2E72700820979 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F8EAEE1DB2E72700820979 /* MainViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		811B68921DA89ACE00903A02 /* Lights.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Lights.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		811B68951DA89ACE00903A02 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		811B68971DA89ACE00903A02 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		811B689A1DA89ACE00903A02 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		811B689D1DA89ACE00903A02 /* Lights.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Lights.xcdatamodel; sourceTree = "<group>"; };
 		811B689F1DA89ACE00903A02 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -36,6 +35,7 @@
 		811B68AD1DA8A15200903A02 /* SanFranciscoText-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SanFranciscoText-Medium.otf"; sourceTree = "<group>"; };
 		811B68AE1DA8A15200903A02 /* SanFranciscoText-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SanFranciscoText-Regular.otf"; sourceTree = "<group>"; };
 		811B68AF1DA8A15200903A02 /* SanFranciscoText-Semibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SanFranciscoText-Semibold.otf"; sourceTree = "<group>"; };
+		81F8EAEE1DB2E72700820979 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,7 +70,7 @@
 			children = (
 				811B68B61DA8A20A00903A02 /* Font */,
 				811B68951DA89ACE00903A02 /* AppDelegate.swift */,
-				811B68971DA89ACE00903A02 /* ViewController.swift */,
+				81F8EAEE1DB2E72700820979 /* MainViewController.swift */,
 				811B68991DA89ACE00903A02 /* Main.storyboard */,
 				811B689F1DA89ACE00903A02 /* Assets.xcassets */,
 				811B68A11DA89ACE00903A02 /* LaunchScreen.storyboard */,
@@ -172,7 +172,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				811B68981DA89ACE00903A02 /* ViewController.swift in Sources */,
+				81F8EAEF1DB2E72700820979 /* MainViewController.swift in Sources */,
 				811B689E1DA89ACE00903A02 /* Lights.xcdatamodeld in Sources */,
 				811B68961DA89ACE00903A02 /* AppDelegate.swift in Sources */,
 			);
@@ -336,6 +336,7 @@
 				811B68A91DA89ACE00903A02 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
