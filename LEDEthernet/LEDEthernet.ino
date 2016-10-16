@@ -8,7 +8,7 @@
  
  Circuit:
  * Ethernet shield attached to pins 10, 11, 12, 13
- * Connect an LEDs to pins 4,5,6, and 7
+ * Connect an LEDs to pins 5,6,7, and 8
  
  Based almost entirely upon Web Server by Tom Igoe and David Mellis
  Edit history: 
@@ -22,7 +22,8 @@
 #include <SPI.h>
 #include <Ethernet.h>
 
-boolean incoming = false;
+boolean incomingRequest = false;
+boolean incomingTone = false;
 
 //Keep track of which lights are on
 boolean red = false;
@@ -30,10 +31,13 @@ boolean green = false;
 boolean blue = false;
 boolean yellow = false;
 
+const int buzzerPin = 9;
+const int toneDuration = 100;
+
 // Enter a MAC address and IP address for your controller below.
 // The IP address will be dependent on your local network:
-byte mac[] = { 0x38, 0x6E, 0xE0, 0x38, 0xB3, 0x89 };
-IPAddress ip(134,173,60,207); 
+byte mac[] = { 0x28, 0x22, 0xD0, 0xEC, 0xC6, 0x5D };
+IPAddress ip(134,173,60,203); 
 
 // Initialize the Ethernet server library
 // with the IP address and port you want to use 
@@ -42,10 +46,10 @@ EthernetServer server(80);
 
 void setup()
 {
+  pinMode(8, OUTPUT);
   pinMode(7, OUTPUT);
   pinMode(6, OUTPUT);
   pinMode(5, OUTPUT);
-  pinMode(4, OUTPUT);
 
   // start the Ethernet connection and the server:
   Ethernet.begin(mac, ip);
@@ -64,16 +68,15 @@ void loop()
       if (client.available()) { //If there are bytes available client.available() returns the number bytes
         char c = client.read();
 
-        Serial.println( c);
+        Serial.println(c);
         
-        //Check for prefix to incoming data
+        //Check for prefix to incoming request for lights, 
         if(c == '$'){ 
-          incoming = true; 
+          incomingRequest = true; 
         }
         
         //Checks for the URL string $1 or $2
-        if(incoming == true){
-          Serial.println(c);
+        if(incomingRequest == true){
           
           if(c == 'r'){
             toggleRed();
@@ -90,6 +93,21 @@ void loop()
           }
         
         }
+
+        //Check for prefix to incoming tones
+        if(c== '&') {
+          incomingTone = true;
+        }
+
+        if (incomingTone == true) {
+          if(c != '&') {
+            tone(buzzerPin, frequency(c), toneDuration);
+            delay(toneDuration);
+            incomingTone = false;
+            break;
+          }
+        }
+        
       }
     }
 
@@ -104,54 +122,87 @@ void loop()
 void toggleRed() {
   Serial.println("Red");
   if (red) {
-    digitalWrite(7, LOW);
+    digitalWrite(8, LOW);
     red = false;
   } else {
-    digitalWrite(7, HIGH);
+    digitalWrite(8, HIGH);
     red = true;
   }
 
   //Now that the process has been completed, there is "no more" data to read
-  incoming = false;
+  incomingRequest = false;
 }
 
 void toggleGreen() {
   Serial.println("Green");
   if (green) {
-    digitalWrite(6, LOW);
+    digitalWrite(7, LOW);
     green = false;
   } else {
-    digitalWrite(6, HIGH);
+    digitalWrite(7, HIGH);
     green = true;
   }
 
-  incoming = false;
+  incomingRequest = false;
 }
 
 void toggleBlue() {
   Serial.println("Blue");
   if (blue) {
-    digitalWrite(5, LOW);
+    digitalWrite(6, LOW);
     blue = false;
   } else {
-    digitalWrite(5, HIGH);
+    digitalWrite(6, HIGH);
     blue = true;
   }
   
-  incoming = false;
+  incomingRequest = false;
 }
 
 void toggleYellow() {
   Serial.println("Yellow");
   if (yellow) {
-    digitalWrite(4, LOW);
+    digitalWrite(5, LOW);
     yellow = false;
   } else {
-    digitalWrite(4, HIGH);
+    digitalWrite(5, HIGH);
     yellow = true;
   }
 
-  incoming = false;
+  incomingRequest = false;
+}
+
+int frequency(char note) 
+{
+  // This function takes a note character (a-g), and returns the
+  // corresponding frequency in Hz for the tone() function.
+
+  int i;
+  const int numNotes = 8;  // number of notes we're storing
+
+  // The following arrays hold the note characters and their
+  // corresponding frequencies. The last "C" note is uppercase
+  // to separate it from the first lowercase "c". If you want to
+  // add more notes, you'll need to use unique characters.
+
+  // For the "char" (character) type, we put single characters
+  // in single quotes.
+
+  char names[] = { 'c', 'd', 'e', 'f', 'g', 'a', 'b', 'C' };
+  int frequencies[] = {262, 294, 330, 349, 392, 440, 494, 523};
+
+  // Now we'll search through the letters in the array, and if
+  // we find it, we'll return the frequency for that note.
+
+  for (i = 0; i < numNotes; i++)  // Step through the notes
+  {
+    if (names[i] == note)         // Is this the one?
+    {
+      return(frequencies[i]);     // Yes! Return the frequency
+    }
+  }
+  return(0);  // We looked through everything and didn't find it,
+              // but we still need to return a value, so return 0.
 }
 
 

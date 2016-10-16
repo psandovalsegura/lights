@@ -18,6 +18,8 @@
 		811B68B31DA8A20400903A02 /* SanFranciscoText-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 811B68AD1DA8A15200903A02 /* SanFranciscoText-Medium.otf */; };
 		811B68B41DA8A20400903A02 /* SanFranciscoText-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 811B68AE1DA8A15200903A02 /* SanFranciscoText-Regular.otf */; };
 		811B68B51DA8A20400903A02 /* SanFranciscoText-Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 811B68AF1DA8A15200903A02 /* SanFranciscoText-Semibold.otf */; };
+		81A8D8FC1DB34C2600C4EC47 /* ToneRequester.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A8D8FB1DB34C2600C4EC47 /* ToneRequester.swift */; };
+		81A8D8FE1DB34C8500C4EC47 /* ArduinoClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A8D8FD1DB34C8500C4EC47 /* ArduinoClient.swift */; };
 		81F8EAEF1DB2E72700820979 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F8EAEE1DB2E72700820979 /* MainViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -35,6 +37,8 @@
 		811B68AD1DA8A15200903A02 /* SanFranciscoText-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SanFranciscoText-Medium.otf"; sourceTree = "<group>"; };
 		811B68AE1DA8A15200903A02 /* SanFranciscoText-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SanFranciscoText-Regular.otf"; sourceTree = "<group>"; };
 		811B68AF1DA8A15200903A02 /* SanFranciscoText-Semibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SanFranciscoText-Semibold.otf"; sourceTree = "<group>"; };
+		81A8D8FB1DB34C2600C4EC47 /* ToneRequester.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToneRequester.swift; sourceTree = "<group>"; };
+		81A8D8FD1DB34C8500C4EC47 /* ArduinoClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArduinoClient.swift; sourceTree = "<group>"; };
 		81F8EAEE1DB2E72700820979 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -71,7 +75,9 @@
 				811B68B61DA8A20A00903A02 /* Font */,
 				811B68951DA89ACE00903A02 /* AppDelegate.swift */,
 				81F8EAEE1DB2E72700820979 /* MainViewController.swift */,
+				81A8D8FD1DB34C8500C4EC47 /* ArduinoClient.swift */,
 				811B68991DA89ACE00903A02 /* Main.storyboard */,
+				81A8D8FB1DB34C2600C4EC47 /* ToneRequester.swift */,
 				811B689F1DA89ACE00903A02 /* Assets.xcassets */,
 				811B68A11DA89ACE00903A02 /* LaunchScreen.storyboard */,
 				811B68A41DA89ACE00903A02 /* Info.plist */,
@@ -172,7 +178,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				81A8D8FC1DB34C2600C4EC47 /* ToneRequester.swift in Sources */,
 				81F8EAEF1DB2E72700820979 /* MainViewController.swift in Sources */,
+				81A8D8FE1DB34C8500C4EC47 /* ArduinoClient.swift in Sources */,
 				811B689E1DA89ACE00903A02 /* Lights.xcdatamodeld in Sources */,
 				811B68961DA89ACE00903A02 /* AppDelegate.swift in Sources */,
 			);

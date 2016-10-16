@@ -9,7 +9,10 @@
 import UIKit
 
 class MainViewController: UIViewController {
-
+    
+    @IBOutlet weak var slider: UISlider!
+    @IBOutlet weak var sliderLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -22,7 +25,7 @@ class MainViewController: UIViewController {
     }
     
     @IBAction func redSwitch(_ sender: AnyObject) {
-        var request = URLRequest(url: URL(string: "http://134.173.60.207/$r")!)
+        var request = URLRequest(url: URL(string: "http://\(ArduinoClient.ipAddress)/$r")!)
         request.httpMethod = "GET"
         let session = URLSession.shared
         
@@ -32,7 +35,7 @@ class MainViewController: UIViewController {
     }
 
     @IBAction func greenSwitch(_ sender: AnyObject) {
-        var request = URLRequest(url: URL(string: "http://134.173.60.207/$g")!)
+        var request = URLRequest(url: URL(string: "http://\(ArduinoClient.ipAddress)/$g")!)
         request.httpMethod = "GET"
         let session = URLSession.shared
         
@@ -42,7 +45,7 @@ class MainViewController: UIViewController {
     }
     
     @IBAction func blueSwitch(_ sender: AnyObject) {
-        var request = URLRequest(url: URL(string: "http://134.173.60.207/$b")!)
+        var request = URLRequest(url: URL(string: "http://\(ArduinoClient.ipAddress)/$b")!)
         request.httpMethod = "GET"
         let session = URLSession.shared
         
@@ -52,7 +55,7 @@ class MainViewController: UIViewController {
     }
     
     @IBAction func yellowSwitch(_ sender: AnyObject) {
-        var request = URLRequest(url: URL(string: "http://134.173.60.207/$y")!)
+        var request = URLRequest(url: URL(string: "http://\(ArduinoClient.ipAddress)/$y")!)
         request.httpMethod = "GET"
         let session = URLSession.shared
         
@@ -60,6 +63,53 @@ class MainViewController: UIViewController {
             print("Yellow request sent.")
             }.resume()
     }
+    
+    @IBAction func onSend(_ sender: AnyObject) {
+        
+    }
+    
+    @IBAction func onSliderValueChange(_ sender: AnyObject) {
+        self.sliderLabel.text = String(self.slider.value)
+    }
+    
+    @IBAction func tone_c(_ sender: AnyObject) {
+        ToneRequester.requestTone(note: "c")
+    }
+    
+    @IBAction func tone_d(_ sender: AnyObject) {
+        ToneRequester.requestTone(note: "d")
+    }
+    
+    @IBAction func tone_e(_ sender: AnyObject) {
+        ToneRequester.requestTone(note: "e")
+    }
+    
+    @IBAction func tone_f(_ sender: AnyObject) {
+        ToneRequester.requestTone(note: "f")
+    }
+    
+    @IBAction func tone_g(_ sender: AnyObject) {
+        ToneRequester.requestTone(note: "g")
+    }
+    
+    @IBAction func tone_a(_ sender: AnyObject) {
+        ToneRequester.requestTone(note: "a")
+    }
+    
+    @IBAction func tone_b(_ sender: AnyObject) {
+        ToneRequester.requestTone(note: "b")
+    }
+    
+    @IBAction func tone_C(_ sender: AnyObject) {
+        ToneRequester.requestTone(note: "C")
+    }
+    
+    
+    
+    
+    
+    
+    
     
     
     
