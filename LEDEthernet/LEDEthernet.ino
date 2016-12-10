@@ -32,12 +32,12 @@ boolean blue = false;
 boolean yellow = false;
 
 const int buzzerPin = 9;
-const int toneDuration = 100;
+const int toneDuration = 200;
 
 // Enter a MAC address and IP address for your controller below.
 // The IP address will be dependent on your local network:
-byte mac[] = { 0x28, 0x22, 0xD0, 0xEC, 0xC6, 0x5D };
-IPAddress ip(134,173,60,203); 
+byte mac[] = { 0x08, 0xFE, 0xBD, 0xCD, 0xBD, 0x5D };
+IPAddress ip(134,173,59,55); 
 
 // Initialize the Ethernet server library
 // with the IP address and port you want to use 

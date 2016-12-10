@@ -9,5 +9,5 @@
 import Foundation
 
 class ArduinoClient {
-    static var ipAddress = "134.173.60.203"
+    static var ipAddress = "134.173.59.55"
 }

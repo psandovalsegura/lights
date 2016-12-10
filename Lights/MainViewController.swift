@@ -26,7 +26,7 @@ class MainViewController: UIViewController {
     
     @IBAction func redSwitch(_ sender: AnyObject) {
         var request = URLRequest(url: URL(string: "http://\(ArduinoClient.ipAddress)/$r")!)
-        request.httpMethod = "GET"
+        request.httpMethod = "POST"
         let session = URLSession.shared
         
         session.dataTask(with: request) {data, response, err in
@@ -36,7 +36,7 @@ class MainViewController: UIViewController {
 
     @IBAction func greenSwitch(_ sender: AnyObject) {
         var request = URLRequest(url: URL(string: "http://\(ArduinoClient.ipAddress)/$g")!)
-        request.httpMethod = "GET"
+        request.httpMethod = "POST"
         let session = URLSession.shared
         
         session.dataTask(with: request) {data, response, err in
@@ -46,7 +46,7 @@ class MainViewController: UIViewController {
     
     @IBAction func blueSwitch(_ sender: AnyObject) {
         var request = URLRequest(url: URL(string: "http://\(ArduinoClient.ipAddress)/$b")!)
-        request.httpMethod = "GET"
+        request.httpMethod = "POST"
         let session = URLSession.shared
         
         session.dataTask(with: request) {data, response, err in
@@ -56,7 +56,7 @@ class MainViewController: UIViewController {
     
     @IBAction func yellowSwitch(_ sender: AnyObject) {
         var request = URLRequest(url: URL(string: "http://\(ArduinoClient.ipAddress)/$y")!)
-        request.httpMethod = "GET"
+        request.httpMethod = "POST"
         let session = URLSession.shared
         
         session.dataTask(with: request) {data, response, err in

@@ -12,7 +12,7 @@ class ToneRequester {
     
     static func requestTone(note: String) {
         var request = URLRequest(url: URL(string: "http://\(ArduinoClient.ipAddress)/&\(note)")!)
-        request.httpMethod = "GET"
+        request.httpMethod = "POST"
         let session = URLSession.shared
         
         session.dataTask(with: request) {data, response, err in
